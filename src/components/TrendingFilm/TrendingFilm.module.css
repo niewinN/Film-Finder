@@ -1,0 +1,44 @@
+.film {
+	position: relative;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2rem;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 15px var(--color-text-default);
+	cursor: pointer;
+
+	@media (min-width: 768px) {
+		width: 300px;
+	}
+}
+
+.film img {
+	width: 100%;
+}
+
+.film h3 {
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	text-align: center;
+	padding: 1rem;
+	color: var(--color-text-default);
+}
+
+.film div {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	right: -14px;
+	top: -14px;
+	padding: 2rem;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: var(--color-text-default);
+	font-weight: bold;
+	font-size: 1.5rem;
+}

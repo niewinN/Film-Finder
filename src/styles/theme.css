@@ -1,0 +1,8 @@
+body {
+	--font-size-default: 16px;
+	--font-family-default: Helvetica, Arial, sans-serif;
+	--color-white: #ffffff;
+	--color-text-default: #222;
+	--color-background: #545151;
+	--color-title: rgb(214, 214, 121);
+}

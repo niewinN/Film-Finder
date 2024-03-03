@@ -1,0 +1,36 @@
+.menuIcon {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	z-index: 1001;
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 0.5rem;
+}
+
+.open .menuLine:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+	z-index: 999999;
+}
+
+.open .menuLine:nth-child(2) {
+	opacity: 0;
+}
+
+.open .menuLine:nth-child(3) {
+	transform: translateY(-17px) rotate(-45deg);
+	z-index: 999999;
+}
+
+.menuLine {
+	width: 30px;
+	height: 4px;
+	background-color: #fff;
+	margin: 4px;
+	transition: all 0.3s;
+}
+
+.scrolled .menuLine {
+	background-color: var(--color-title);
+}
