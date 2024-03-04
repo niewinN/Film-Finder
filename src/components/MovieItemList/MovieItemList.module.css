@@ -1,0 +1,14 @@
+/* MovieItemList.module.css */
+.movieItemList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	/* align-items: center; */
+}
+
+@media (max-width: 768px) {
+	.movieItemList {
+		flex-direction: column;
+		align-items: center;
+	}
+}

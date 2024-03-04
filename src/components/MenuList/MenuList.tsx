@@ -1,6 +1,7 @@
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import styles from "./MenuList.module.css"
 import { NavLink } from "react-router-dom"
+import { NAV_LINKS } from "../../constants/links"
 
 interface MenuListProps {
 	isOpen: boolean
@@ -8,28 +9,13 @@ interface MenuListProps {
 }
 
 export function MenuList({ isOpen, onClick }: MenuListProps) {
-	const navLinks = [
-		{
-			path: "library",
-			linkName: "Biblioteka",
-		},
-		{
-			path: "recommended",
-			linkName: "Polecane",
-		},
-		{
-			path: "aboutus",
-			linkName: "O nas",
-		},
-	]
-
 	useLockBodyScroll(isOpen)
 
 	return (
 		<ul className={`${styles.menuList} ${isOpen ? styles.expanded : ""} `}>
-			{navLinks.map(link => (
+			{NAV_LINKS.map(link => (
 				<li key={link.path} onClick={onClick}>
-					<NavLink to='#'>{link.linkName}</NavLink>
+					<NavLink to={link.path}>{link.linkName}</NavLink>
 				</li>
 			))}
 		</ul>

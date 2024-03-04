@@ -1,0 +1,41 @@
+.wrapper {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.wrapper div {
+	max-width: 1600px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navDesktop {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 1rem;
+	width: 100%;
+}
+
+.navDesktop li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-wrap: nowrap;
+}
+
+.navDesktop li a {
+	color: var(--color-white);
+	font-size: 1.3rem;
+	padding: 1rem 1.5rem;
+
+	@media (min-width: 1024px) {
+		font-size: 1.4rem;
+	}
+}
