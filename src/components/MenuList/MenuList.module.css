@@ -8,16 +8,17 @@
 	background-color: rgb(21, 20, 20);
 	position: fixed;
 	top: 0px;
-	width: 0vw;
+	width: 90vw;
+	transform: translateX(100%);
 	right: 0;
 	color: #fff;
 	overflow: hidden;
 	z-index: 999;
-	transition: width 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
 }
 
 .expanded {
-	width: 90vw;
+	transform: translateX(0);
 }
 
 .menuList li a {

@@ -3,7 +3,7 @@ import { Library } from "./views/Library"
 import { MainPage } from "./views/MainPage"
 import { Routes, Route } from "react-router-dom"
 import { MovieDetailsPage } from "./views/MovieDetailsPage"
-
+import { WatchlistPage } from "./views/WatchlistPage"
 function App() {
 	return (
 		<FiltersProvider>
@@ -11,6 +11,7 @@ function App() {
 				<Route path='' element={<MainPage />} />
 				<Route path='/library' element={<Library />} />
 				<Route path='/movie/:id' element={<MovieDetailsPage />} />
+				<Route path='/watchlist' element={<WatchlistPage />} />
 			</Routes>
 		</FiltersProvider>
 	)

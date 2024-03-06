@@ -3,13 +3,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	width: 100%;
+	/* width: 100%; */
+	z-index: 999;
+	position: fixed;
 }
 
 .logo a {
 	color: var(--color-white);
 	text-align: left;
-	width: 100%;
+	/* width: 100%; */
 	align-items: center;
 	left: 0;
 	font-size: 1.5rem;

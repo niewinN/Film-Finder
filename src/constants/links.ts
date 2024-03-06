@@ -13,8 +13,8 @@ export const NAV_LINKS: NavLink[] = [
 		linkName: "Polecane",
 	},
 	{
-		path: "/aboutus",
-		linkName: "O nas",
+		path: "/watchlist",
+		linkName: "Watchlist",
 	},
 	{
 		path: "/idea",

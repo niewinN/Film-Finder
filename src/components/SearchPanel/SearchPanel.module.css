@@ -9,7 +9,7 @@
 	padding: 1rem;
 	/* background-color: var(--color-title); */
 	box-shadow: 0 2px 15px #646464;
-	flex-basis: 60%;
+	/* flex-basis: 60%; */
 	color: var(--color-white);
 	border-radius: 8px;
 }

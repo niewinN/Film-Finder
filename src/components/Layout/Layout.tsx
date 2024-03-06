@@ -14,8 +14,8 @@ export function Layout({ children }: LayoutProps) {
 			<MainContent>
 				<Navigation showLogo={true} />
 				<VideoBackground>{children}</VideoBackground>
-				<Footer />
 			</MainContent>
+			<Footer />
 		</>
 	)
 }
