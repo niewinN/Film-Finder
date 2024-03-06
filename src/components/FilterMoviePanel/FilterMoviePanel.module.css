@@ -7,6 +7,7 @@
 	box-shadow: 0 2px 15px #646464;
 	/* padding: 1rem; */
 	flex-basis: 28%;
+	color: var(--color-white);
 }
 
 .filterPanel h2 {

@@ -1,5 +1,5 @@
 import { MovieItem } from "../MovieItem/MovieItem"
-import styles from "./MovieItemList.module.css" // Załóżmy, że mamy tutaj odpowiednie style
+import styles from "./MovieItemList.module.css"
 
 interface Movie {
 	id: number
@@ -9,7 +9,7 @@ interface Movie {
 }
 
 interface MovieItemListProps {
-	movies: Movie[] // Use the Movie interface to type the movies array
+	movies: Movie[]
 }
 
 const MovieItemList = ({ movies }: MovieItemListProps) => {
@@ -17,7 +17,7 @@ const MovieItemList = ({ movies }: MovieItemListProps) => {
 		<div className={styles.movieItemList}>
 			{movies.map(movie => (
 				<MovieItem
-					key={movie.id}
+					id={movie.id}
 					title={movie.title}
 					releaseDate={movie.release_date}
 					posterPath={movie.poster_path}

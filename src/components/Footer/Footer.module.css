@@ -4,4 +4,8 @@
 	text-align: center;
 	padding: 1rem;
 	color: var(--color-text-default);
+	margin-top: auto;
+	/* position: absolute;
+	bottom: 0;
+	width: 100%; */
 }

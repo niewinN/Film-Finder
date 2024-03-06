@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import useDebounce from "./useDebounce"
+import { useFilters } from "../contexts/FiltersContext"
+import { filterMovies } from "../utils/movieFilters"
 
 interface Movie {
 	id: number
@@ -7,6 +9,8 @@ interface Movie {
 	poster_path: string
 	backdrop_path: string
 	release_date: string
+	adult: boolean
+	genre_ids: number[]
 }
 
 const useSearchMovies = (initialQuery: string = "", delay: number = 500) => {
@@ -14,6 +18,8 @@ const useSearchMovies = (initialQuery: string = "", delay: number = 500) => {
 	const [results, setResults] = useState<Movie[]>([])
 	const [isSearching, setIsSearching] = useState<boolean>(false)
 	const [errorMessage, setErrorMessage] = useState<string>("")
+
+	const { selectedGenres, selectedYears, isAdult } = useFilters()
 
 	const debouncedQuery = useDebounce<string>(query, delay)
 
@@ -23,7 +29,7 @@ const useSearchMovies = (initialQuery: string = "", delay: number = 500) => {
 			const api_key = import.meta.env.VITE_API_KEY
 			const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${encodeURIComponent(
 				debouncedQuery
-			)}&language=en-US`
+			)}&language=en-US&include_adult=true`
 
 			fetch(url)
 				.then(res => {
@@ -33,17 +39,13 @@ const useSearchMovies = (initialQuery: string = "", delay: number = 500) => {
 					return res.json()
 				})
 				.then(data => {
-					const filteredResults = data.results.filter(
-						(movie: Movie) =>
-							movie.poster_path !== null &&
-							movie.poster_path !== "" &&
-							movie.release_date !== null &&
-							movie.release_date !== ""
-					)
+					const filters = { selectedGenres, selectedYears, isAdult }
+					const filteredResults = filterMovies(data.results, filters)
+
 					setResults(filteredResults)
 
 					if (filteredResults.length === 0) {
-						setErrorMessage("No movies found with backdrop images.")
+						setErrorMessage("No movies found matching the criteria.")
 					} else {
 						setErrorMessage("")
 					}
@@ -60,7 +62,7 @@ const useSearchMovies = (initialQuery: string = "", delay: number = 500) => {
 			setResults([])
 			setErrorMessage("")
 		}
-	}, [debouncedQuery])
+	}, [debouncedQuery, isAdult, selectedYears, selectedGenres])
 
 	return { query, setQuery, results, isSearching, errorMessage }
 }

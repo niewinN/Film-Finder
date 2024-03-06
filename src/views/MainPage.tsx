@@ -5,22 +5,25 @@ import { WelcomeTextPanel } from "../components/WelcomeTextPanel/WelcomeTextPane
 import { TrendingFilmList } from "../components/TrendingFilmList/TrendingFilmList"
 import { NavDesktop } from "../components/NavDesktop/NavDesktop"
 import { useIsDesktop } from "../hooks/useIsDesktop"
+import { MainContent } from "../components/MainContent/MainContent"
+import { Navigation } from "../components/Navigation/Navigation"
+import { VideoBackground } from "../components/VideoBackground/VideoBackground"
 
 export function MainPage() {
 	const isDesktop = useIsDesktop()
 
 	return (
 		<>
-			<MainBackground>
-				<WelcomeTextPanel />
-				{isDesktop ? (
-					<NavDesktop showLogo={false} />
-				) : (
-					<NavMobile showLogo={false} />
-				)}
-			</MainBackground>
-			<TrendingFilmList />
-			<Footer />
+			<MainContent>
+				<VideoBackground>
+					<MainBackground>
+						<WelcomeTextPanel />
+						<Navigation showLogo={false} />
+					</MainBackground>
+					<TrendingFilmList />
+				</VideoBackground>
+				<Footer />
+			</MainContent>
 		</>
 	)
 }
