@@ -2,7 +2,7 @@ import styles from "../components/MovieDetails/MovieDetails.module.css"
 import { Layout } from "../components/Layout/Layout"
 import { MovieInformation } from "../components/MovieInformation/MovieInformation"
 import { Wrapper } from "../components/Wrapper/Wrapper"
-import { Movie } from "../components/interfaces/Movie"
+import { Movie } from "../interfaces/Movie"
 import { useEffect, useState } from "react"
 
 export function WatchlistPage() {

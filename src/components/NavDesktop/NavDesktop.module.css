@@ -29,10 +29,10 @@
 	background-color: rgba(
 		0,
 		0,
-		0,
-		0.8
+		0
 	); /* Dodanie lekkiej przezroczystości dla estetyki */
 	z-index: 999; /* Upewniamy się, że nawigacja będzie na wierzchu */
+	padding: 0.5rem 0;
 }
 
 .wrapper > div {

@@ -6,18 +6,18 @@ interface NavLink {
 export const NAV_LINKS: NavLink[] = [
 	{
 		path: "/library",
-		linkName: "Biblioteka",
+		linkName: "Library",
 	},
-	{
-		path: "/recommended",
-		linkName: "Polecane",
-	},
+	// {
+	// 	path: "/recommended",
+	// 	linkName: "Polecane",
+	// },
 	{
 		path: "/watchlist",
 		linkName: "Watchlist",
 	},
 	{
 		path: "/idea",
-		linkName: "Pomysł",
+		linkName: "Idea",
 	},
 ]

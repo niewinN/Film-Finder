@@ -4,7 +4,7 @@ import styles from "./SearchPanel.module.css"
 export function SearchPanel() {
 	return (
 		<div className={styles.searchPanel}>
-			<p>Jaki film cię interesuję?</p>
+			<p>What film are you interested in?</p>
 			<SearchFilmInput />
 		</div>
 	)

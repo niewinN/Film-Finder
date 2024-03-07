@@ -5,10 +5,10 @@ export function WelcomeTextPanel() {
 	return (
 		<div className={styles.welcomePanel}>
 			<div className={styles.searchBox}>
-				<h1>Witaj w Film Finder</h1>
-				<p>To tutaj znajdziesz wszystko o filmach</p>
+				<h1>Welcome to Film Finder</h1>
+				<p>This is a place created for film lovers</p>
 				<button>
-					<Link to='#'>Sprawdź</Link>
+					<Link to='/library'>Search</Link>
 				</button>
 			</div>
 		</div>

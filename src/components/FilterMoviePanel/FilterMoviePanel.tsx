@@ -47,21 +47,21 @@ export function FilterMoviePanel() {
 			{!isCollapsed && (
 				<>
 					<CheckboxFilter
-						title='Gatunek'
+						title='Genre'
 						options={genreOptions}
 						onChange={(value, isChecked) =>
 							handleCheckboxChange("genre", value, isChecked)
 						}
 					/>
 					<CheckboxFilter
-						title='Rok wydania'
+						title='Release date'
 						options={yearOptions}
 						onChange={(value, isChecked) =>
 							handleCheckboxChange("year", value, isChecked)
 						}
 					/>
 					<CheckboxFilter
-						title='Dla dorosłych'
+						title='For adults'
 						options={adultOptions}
 						onChange={(value, isChecked) =>
 							handleCheckboxChange("adult", value, isChecked)

@@ -10,7 +10,7 @@ export function SearchFilmInput() {
 		<div className={styles.searchFilm}>
 			<input
 				type='text'
-				placeholder='Nazwa filmu...'
+				placeholder='Film title...'
 				value={query}
 				onChange={e => setQuery(e.target.value)}
 			/>
