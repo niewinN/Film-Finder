@@ -3,11 +3,16 @@
 	border-radius: 8px;
 	overflow: hidden;
 	width: 100%;
+	/* margin-top: 120px; */
 
 	@media (min-width: 768px) {
 		display: flex;
 		justify-content: space-between;
-		max-height: 560px;
+		/* max-height: 560px; */
+	}
+
+	@media (min-width: 1024px) {
+		max-height: 600px;
 	}
 }
 
@@ -53,8 +58,10 @@
 	justify-content: space-between;
 }
 
-.last {
-	margin-bottom: 2rem;
+.time {
+	display: flex;
+	width: 40%;
+	justify-content: space-between;
 }
 
 .box div div {

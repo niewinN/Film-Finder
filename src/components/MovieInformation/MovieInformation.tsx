@@ -102,7 +102,10 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 					<div className={styles.box}>
 						<h1>{movie.title}</h1>
 						<div>
-							<p>{formatYear(movie.release_date)}</p>
+							<p className={styles.time}>
+								{formatYear(movie.release_date)} <span>|</span>
+								<span>{formatRuntime(movie.runtime)}</span>
+							</p>
 							<div>
 								{formatRating(movie.vote_average)}
 								<span>
@@ -112,9 +115,6 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 						</div>
 						<p>Gatunek: {formatGenres(movie.genres)}</p>{" "}
 						<p>Opis: {movie.overview || "Brak opisu."}</p>
-						<p className={styles.last}>
-							Czas trwania: {formatRuntime(movie.runtime)}
-						</p>
 						<FullWidthButton onClick={handleWatchlistToggle}>
 							{showRemoveButton ? "Remove" : "Add to watchlist"}
 						</FullWidthButton>
