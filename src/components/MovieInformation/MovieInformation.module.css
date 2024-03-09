@@ -14,6 +14,10 @@
 	@media (min-width: 1024px) {
 		max-height: 600px;
 	}
+
+	@media (min-width: 1200px) {
+		max-height: 500px;
+	}
 }
 
 .box {
@@ -56,6 +60,10 @@
 .box div {
 	display: flex;
 	justify-content: space-between;
+
+	@media (max-width: 300px) {
+		font-size: 0.9rem;
+	}
 }
 
 .time {

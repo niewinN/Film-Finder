@@ -3,6 +3,7 @@ import { useState } from "react"
 import { IdeaPanel } from "../components/IdeaPanel/IdeaPanel"
 import { Layout } from "../components/Layout/Layout"
 import { MovieInformation } from "../components/MovieInformation/MovieInformation"
+import { ReloadIcon } from "../components/ReloadIcon/ReloadIcon"
 
 export function IdeaPage() {
 	const [showIdeaPanel, setShowIdeaPanel] = useState<boolean>(true)
@@ -86,6 +87,7 @@ export function IdeaPage() {
 					</div>
 				)}
 			</div>
+			<ReloadIcon onGenerateClick={fetchMovieDetailsUntilFound} />
 		</Layout>
 	)
 }

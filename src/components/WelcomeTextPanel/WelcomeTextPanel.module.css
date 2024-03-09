@@ -23,15 +23,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	/* @media (min-width: 768px) and (orientation: landscape) {
-		width: 40%;
-		margin-right: 4rem;
-	}
-
-	@media (min-width: 1024px) {
-		margin-right: 5rem;
-	} */
 }
 
 .searchBox h1 {
@@ -72,4 +63,9 @@
 	@media (min-width: 1024px) {
 		font-size: 1.8rem;
 	}
+}
+
+.searchBox button a {
+	display: block;
+	width: 100%;
 }

@@ -1,5 +1,5 @@
 import styles from "./BurgerIcon.module.css"
-import { useScrollPage } from "../../hooks/useScrollPage"
+// import { useScrollPage } from "../../hooks/useScrollPage"
 
 interface BurgerIconProps {
 	isOpen: boolean
@@ -7,13 +7,11 @@ interface BurgerIconProps {
 }
 
 export function BurgerIcon({ isOpen, onClick }: BurgerIconProps) {
-	const isScrolled = useScrollPage()
+	// const isScrolled = useScrollPage()
 
 	return (
 		<div
-			className={`${styles.menuIcon} ${isOpen ? styles.open : ""} ${
-				isScrolled ? styles.scrolled : ""
-			}`}
+			className={`${styles.menuIcon} ${isOpen ? styles.open : ""} `}
 			onClick={onClick}>
 			{Array.from({ length: 3 }, (_, index) => (
 				<div key={index} className={styles.menuLine}></div>

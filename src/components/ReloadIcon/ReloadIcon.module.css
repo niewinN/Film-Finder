@@ -1,0 +1,11 @@
+.reload {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.reload img {
+	width: 80px;
+	cursor: pointer;
+}

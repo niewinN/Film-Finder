@@ -8,6 +8,7 @@
 	/* padding: 1rem; */
 	flex-basis: 28%;
 	color: var(--color-white);
+	cursor: pointer;
 }
 
 .filterPanel h2 {

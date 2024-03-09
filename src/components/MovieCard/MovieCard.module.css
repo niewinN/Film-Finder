@@ -7,6 +7,10 @@
 	transition: transform 0.2s;
 	position: relative;
 	margin: 0 10px;
+
+	@media (max-width: 300px) {
+		width: 200px;
+	}
 }
 
 .card:hover {
