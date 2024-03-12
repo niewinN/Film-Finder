@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { Modal } from "../components/Modal/Modal"
 import { Error } from "../components/Error/Error"
 import watchlistImg from "../assets/watchlist.png"
+import { WatchlistError } from "../components/WatchlistError/WatchlistError"
 
 export function WatchlistPage() {
 	const [watchlist, setWatchlist] = useState<Movie[]>([])
@@ -49,10 +50,11 @@ export function WatchlistPage() {
 						</div>
 					))
 				) : (
-					<>
-						<Error>No movie added to watchlist</Error>
-						<img width='300px' src={watchlistImg} alt='Error Image' />
-					</>
+					<WatchlistError/>
+					// <>
+					// 	<Error>No movie added to watchlist</Error>
+					// 	<img width='300px' src={watchlistImg} alt='Error Image' />
+					// </>
 				)}
 				{isModalVisible && (
 					<Modal

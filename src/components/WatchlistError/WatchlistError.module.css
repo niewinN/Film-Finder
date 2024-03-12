@@ -1,0 +1,11 @@
+.watchlistError {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.watchlistError img, .watchlistError button {
+    width: 300px;
+}
