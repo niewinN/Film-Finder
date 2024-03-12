@@ -23,6 +23,7 @@ export const CheckboxFilter: React.FC<CheckboxFilterProps> = ({
 				<div className={styles.filtrBox} key={option.value}>
 					<input
 						type='checkbox'
+						className={styles.customCheckbox}
 						id={option.value}
 						value={option.value}
 						onChange={e => onChange(option.value, e.target.checked)}

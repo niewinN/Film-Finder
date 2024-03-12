@@ -83,3 +83,10 @@
 	width: 20px;
 	height: 20px;
 }
+
+.description.long {
+	@media (min-width: 768px) {
+		max-height: 200px;
+		overflow-y: auto;
+	}
+}

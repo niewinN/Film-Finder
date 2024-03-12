@@ -7,9 +7,10 @@ export function WelcomeTextPanel() {
 			<div className={styles.searchBox}>
 				<h1>Welcome to Film Finder</h1>
 				<p>This is a place created for film lovers</p>
-				<button>
-					<Link to='/library'>Search</Link>
-				</button>
+
+				<Link className={styles.button} to='/library'>
+					Search
+				</Link>
 			</div>
 		</div>
 	)

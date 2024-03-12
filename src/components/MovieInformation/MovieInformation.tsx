@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom"
 import styles from "./MovieInformation.module.css"
-
 import star from "../../assets/star.png"
 import { FullWidthButton } from "../FullWidthButton/FullWidthButton"
 import useMovieDetails from "../../hooks/useMovieDetails"
+import { useEffect, useState } from "react"
 
 type Genre = {
 	id: number
@@ -14,6 +14,7 @@ interface MovieInformationProps {
 	movie?: Movie
 	showRemoveButton?: boolean
 	onWatchlistChange?: () => void
+	showModal: (title: string, text: string) => void
 }
 
 interface Movie {
@@ -32,11 +33,24 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 	movie: movieProp,
 	showRemoveButton = false,
 	onWatchlistChange,
+	showModal,
 }) => {
 	const { id } = useParams<{ id: string }>()
 	const { movie: movieFromHook, isLoading, error } = useMovieDetails(id)
+	const [isAddedToWatchlist, setIsAddedToWatchlist] = useState(false)
 	const movie = movieProp || movieFromHook
-	// const { movie, isLoading, error } = useMovieDetails(id || "")
+
+	useEffect(() => {
+		if (!movie) return
+
+		const existingWatchlist = JSON.parse(
+			localStorage.getItem("watchlist") || "[]"
+		)
+		const isOnWatchlist = existingWatchlist.some(
+			(m: Movie) => m.id === movie.id
+		)
+		setIsAddedToWatchlist(isOnWatchlist)
+	}, [movie])
 
 	if (isLoading) {
 		return <div>Ładowanie...</div>
@@ -45,6 +59,14 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 	if (error) {
 		return <div>Wystąpił błąd: {error}</div>
 	}
+
+	const isDescriptionLong = description => {
+		return description.split(" ").length > 70
+	}
+
+	const descriptionClassName = isDescriptionLong(movie.overview)
+		? `${styles.description} ${styles.long}`
+		: styles.description
 
 	const formatYear = (date: string) => date.split("-")[0]
 
@@ -73,19 +95,32 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 		const existingWatchlist = JSON.parse(
 			localStorage.getItem("watchlist") || "[]"
 		)
-		if (showRemoveButton) {
+		if (isAddedToWatchlist) {
 			// Logika usuwania z listy obserwowanych
 			const updatedWatchlist = existingWatchlist.filter(
 				(m: Movie) => m.id !== movie?.id
 			)
 			localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist))
+			setIsAddedToWatchlist(false)
 		} else {
 			// Logika dodawania do listy obserwowanych
 			if (!existingWatchlist.some((m: Movie) => m.id === movie?.id)) {
 				const updatedWatchlist = [...existingWatchlist, movie]
 				localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist))
+				setIsAddedToWatchlist(true)
 			}
 		}
+		if (onWatchlistChange) {
+			onWatchlistChange()
+		}
+
+		showModal(
+			`Watchlist Update`,
+			`The movie was successfully ${
+				showRemoveButton ? "removed from" : "added to"
+			} your watchlist.`
+		)
+
 		if (onWatchlistChange) {
 			onWatchlistChange()
 		}
@@ -114,8 +149,13 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 							</div>
 						</div>
 						<p>Gatunek: {formatGenres(movie.genres)}</p>{" "}
-						<p>Opis: {movie.overview || "Brak opisu."}</p>
-						<FullWidthButton onClick={handleWatchlistToggle}>
+						<p className={descriptionClassName}>
+							Opis: {movie.overview || "Brak opisu."}
+						</p>
+						<FullWidthButton
+							onClick={handleWatchlistToggle}
+							disabled={!showRemoveButton && isAddedToWatchlist} // Tutaj poprawione
+						>
 							{showRemoveButton ? "Remove" : "Add to watchlist"}
 						</FullWidthButton>
 					</div>

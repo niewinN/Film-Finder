@@ -43,3 +43,19 @@
 		width: 40%;
 	}
 }
+
+.ideaPanel .countdown {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 10rem;
+
+	@media (min-width: 768px) {
+		width: 50%;
+	}
+
+	@media (min-width: 1024px) {
+		width: 40%;
+	}
+}

@@ -21,5 +21,44 @@
 .filtrBox label {
 	font-size: 1.2rem;
 	display: flex;
-	margin-left: 0.5rem;
+}
+
+.customCheckbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.customCheckbox + label {
+	position: relative;
+	padding-left: 30px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	user-select: none;
+}
+
+.customCheckbox + label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+}
+
+.customCheckbox:checked + label:before {
+	background-color: #222;
+	border-color: #222;
+}
+
+.customCheckbox:checked + label:after {
+	content: "✔";
+	position: absolute;
+	left: 5px;
+	top: 0px;
+	font-size: 18px;
+	color: #fff;
 }

@@ -1,0 +1,35 @@
+.modal {
+	position: fixed;
+	z-index: 9999999999999999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px);
+}
+
+.modal div {
+	width: 320px;
+	background-color: rgba(255, 255, 255);
+	padding: 20px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.modal div p {
+	font-size: 1.2rem;
+	display: flex;
+	text-align: center;
+}
+
+.modal div button {
+	background-color: #222;
+	color: var(--color-white);
+}

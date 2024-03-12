@@ -66,9 +66,8 @@ const MovieList: React.FC<MovieListProps> = ({ type, title }) => {
 
 	return (
 		<>
-			{/* <Wrapper> */}
 			<h2 className={styles.listTitle}>{title}</h2>
-			{/* </Wrapper> */}
+
 			<div className={styles.container}>
 				<button className={styles.scrollButton} onClick={() => scroll("left")}>
 					<img src={arrowLeft} alt='Ikona SVG' width='30' height='30' />
