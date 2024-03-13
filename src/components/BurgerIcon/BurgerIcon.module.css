@@ -26,11 +26,11 @@
 .menuLine {
 	width: 30px;
 	height: 4px;
-	background-color: #fff;
+	background-color: var(--color-white);
 	margin: 4px;
 	transition: all 0.3s;
 }
 
-.scrolled .menuLine {
+/* .scrolled .menuLine {
 	background-color: var(--color-title);
-}
+} */

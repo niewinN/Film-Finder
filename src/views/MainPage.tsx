@@ -1,9 +1,11 @@
-import { MainBackground } from "../components/MainBackground/MainBackground"
+import "../styles/views.css"
 import { WelcomeTextPanel } from "../components/WelcomeTextPanel/WelcomeTextPanel"
 import { Layout } from "../components/Layout/Layout"
 import MovieList from "../components/MovieList/MovieList"
 
-const movieListTypes = [
+type MovieListType = "popular" | "topRated" | "upcoming" | "nowPlaying"
+
+const movieListTypes: { type: MovieListType; title: string }[] = [
 	{ type: "popular", title: "Popular" },
 	{ type: "topRated", title: "Top rated" },
 	{ type: "upcoming", title: "Upcoming" },
@@ -13,9 +15,9 @@ const movieListTypes = [
 export function MainPage() {
 	return (
 		<Layout>
-			<MainBackground>
+			<div className='mainPage'>
 				<WelcomeTextPanel />
-			</MainBackground>
+			</div>
 			{movieListTypes.map(({ type, title }) => (
 				<MovieList key={type} type={type} title={title} />
 			))}

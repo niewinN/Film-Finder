@@ -1,32 +1,23 @@
-import { useParams } from "react-router-dom"
 import styles from "./MovieInformation.module.css"
+import { useParams } from "react-router-dom"
 import star from "../../assets/star.png"
 import { FullWidthButton } from "../FullWidthButton/FullWidthButton"
 import useMovieDetails from "../../hooks/useMovieDetails"
-import { useEffect, useState } from "react"
-
-type Genre = {
-	id: number
-	name: string
-}
+import { Movie } from "../../interfaces/Movie"
+import {
+	formatYear,
+	formatGenres,
+	formatRating,
+	formatRuntime,
+	isDescriptionLong,
+} from "../../utils/movieFormats"
+import { useWatchlist } from "../../hooks/useWatchlist"
 
 interface MovieInformationProps {
 	movie?: Movie
 	showRemoveButton?: boolean
 	onWatchlistChange?: () => void
-	showModal: (title: string, text: string) => void
-}
-
-interface Movie {
-	id: number
-	title: string
-	release_date: string
-	vote_average: number
-	overview: string
-	poster_path: string
-	vote_count: number
-	runtime: number
-	genres: Genre[]
+	showModal?: (title: string, text: string) => void
 }
 
 export const MovieInformation: React.FC<MovieInformationProps> = ({
@@ -37,90 +28,27 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 }) => {
 	const { id } = useParams<{ id: string }>()
 	const { movie: movieFromHook, isLoading, error } = useMovieDetails(id)
-	const [isAddedToWatchlist, setIsAddedToWatchlist] = useState(false)
 	const movie = movieProp || movieFromHook
+	const { isAddedToWatchlist, toggleWatchlist } = useWatchlist(movie)
 
-	useEffect(() => {
-		if (!movie) return
-
-		const existingWatchlist = JSON.parse(
-			localStorage.getItem("watchlist") || "[]"
-		)
-		const isOnWatchlist = existingWatchlist.some(
-			(m: Movie) => m.id === movie.id
-		)
-		setIsAddedToWatchlist(isOnWatchlist)
-	}, [movie])
-
-	if (isLoading) {
-		return <div>Ładowanie...</div>
-	}
-
-	if (error) {
-		return <div>Wystąpił błąd: {error}</div>
-	}
-
-	const isDescriptionLong = description => {
-		return description.split(" ").length > 70
-	}
+	if (isLoading) return <div>Loading...</div>
+	if (error) return <div>Error: {error}</div>
+	if (!movie) return <div>Movie not found</div>
 
 	const descriptionClassName = isDescriptionLong(movie.overview)
 		? `${styles.description} ${styles.long}`
 		: styles.description
 
-	const formatYear = (date: string) => date.split("-")[0]
-
-	const formatRuntime = (runtime: number) => {
-		const hours = Math.floor(runtime / 60)
-		const minutes = runtime % 60
-
-		if (hours === 0 && minutes === 0) {
-			return "-"
-		} else if (hours === 0) {
-			return `${minutes}m`
-		} else if (minutes === 0) {
-			return `${hours}h`
-		} else {
-			return `${hours}h ${minutes}m`
-		}
-	}
-
-	const formatRating = (rating: number) =>
-		rating !== 0 ? rating.toFixed(1) : "-"
-
-	const formatGenres = (genres: Genre[]) =>
-		genres.map(genre => genre.name).join(", ")
-
 	const handleWatchlistToggle = () => {
-		const existingWatchlist = JSON.parse(
-			localStorage.getItem("watchlist") || "[]"
-		)
-		if (isAddedToWatchlist) {
-			// Logika usuwania z listy obserwowanych
-			const updatedWatchlist = existingWatchlist.filter(
-				(m: Movie) => m.id !== movie?.id
+		toggleWatchlist()
+		if (showModal) {
+			showModal(
+				`Watchlist Update`,
+				`The movie was successfully ${
+					showRemoveButton ? "removed from" : "added to"
+				} your watchlist.`
 			)
-			localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist))
-			setIsAddedToWatchlist(false)
-		} else {
-			// Logika dodawania do listy obserwowanych
-			if (!existingWatchlist.some((m: Movie) => m.id === movie?.id)) {
-				const updatedWatchlist = [...existingWatchlist, movie]
-				localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist))
-				setIsAddedToWatchlist(true)
-			}
 		}
-		if (onWatchlistChange) {
-			onWatchlistChange()
-		}
-
-		showModal(
-			`Watchlist Update`,
-			`The movie was successfully ${
-				showRemoveButton ? "removed from" : "added to"
-			} your watchlist.`
-		)
-
 		if (onWatchlistChange) {
 			onWatchlistChange()
 		}
@@ -132,7 +60,7 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 				<>
 					<img
 						src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-						alt={`Plakat filmu ${movie.title}`}
+						alt={`Poster of ${movie.title}`}
 					/>
 					<div className={styles.box}>
 						<h1>{movie.title}</h1>
@@ -144,18 +72,17 @@ export const MovieInformation: React.FC<MovieInformationProps> = ({
 							<div>
 								{formatRating(movie.vote_average)}
 								<span>
-									<img src={star} />
+									<img src={star} alt='Star rating' />
 								</span>{" "}
 							</div>
 						</div>
-						<p>Gatunek: {formatGenres(movie.genres)}</p>{" "}
+						<p>Genre: {formatGenres(movie.genres)}</p>{" "}
 						<p className={descriptionClassName}>
-							Opis: {movie.overview || "Brak opisu."}
+							Description: {movie.overview || "No description."}
 						</p>
 						<FullWidthButton
 							onClick={handleWatchlistToggle}
-							disabled={!showRemoveButton && isAddedToWatchlist} // Tutaj poprawione
-						>
+							disabled={!showRemoveButton && isAddedToWatchlist}>
 							{showRemoveButton ? "Remove" : "Add to watchlist"}
 						</FullWidthButton>
 					</div>

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 
-const ScrollToTop: React.FC = () => {
+const useScrollToTop = () => {
 	const location = useLocation()
-	const [prevPath, setPrevPath] = useState("")
+	const [prevPath, setPrevPath] = useState<string>("")
 
 	useEffect(() => {
 		if (prevPath !== location.pathname) {
@@ -18,4 +18,4 @@ const ScrollToTop: React.FC = () => {
 	return null
 }
 
-export default ScrollToTop
+export default useScrollToTop

@@ -1,11 +1,8 @@
 .filterPanel {
 	width: 90%;
-	/* margin: 2rem auto 0; */
-	/* border: 1px solid red; */
 	border-radius: 8px;
 	overflow: hidden;
-	box-shadow: 0 2px 15px #646464;
-	/* padding: 1rem; */
+	box-shadow: 0 2px 15px var(--color-shadow);
 	flex-basis: 28%;
 	color: var(--color-white);
 	cursor: pointer;

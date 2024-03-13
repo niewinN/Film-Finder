@@ -1,27 +1,18 @@
 .searchPanel {
-	/* margin-top: 6rem; */
-	/* width: 100vw; */
-	/* margin-left: 2rem; */
 	text-align: center;
-	/* border: 1px solid red; */
 	width: 90%;
-	/* margin: 6rem auto 0; */
 	padding: 1rem;
-	/* background-color: var(--color-title); */
-	box-shadow: 0 2px 15px #646464;
-	/* flex-basis: 60%; */
+	box-shadow: 0 2px 15px var(--color-shadow);
 	color: var(--color-white);
 	border-radius: 8px;
 }
 
 .searchPanel h2 {
-	/* color: var(--color-title); */
 	margin-bottom: 1rem;
 	font-size: 1.5rem;
 }
 
 .searchPanel p {
 	margin: 1rem 0;
-	/* color: var(--color-white); */
 	font-size: 1.3rem;
 }

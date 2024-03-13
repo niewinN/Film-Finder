@@ -5,11 +5,13 @@ import { Routes, Route } from "react-router-dom"
 import { MovieDetailsPage } from "./views/MovieDetailsPage"
 import { WatchlistPage } from "./views/WatchlistPage"
 import { IdeaPage } from "./views/IdeaPage"
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
+import useScrollToTop from "./hooks/useScrollToTop"
+
 function App() {
+	useScrollToTop()
+
 	return (
 		<FiltersProvider>
-			<ScrollToTop />
 			<Routes>
 				<Route path='' element={<MainPage />} />
 				<Route path='/library' element={<Library />} />

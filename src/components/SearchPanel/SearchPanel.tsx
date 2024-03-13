@@ -1,5 +1,5 @@
-import { SearchFilmInput } from "../SearchFilmInput/SearchFilmInput"
 import styles from "./SearchPanel.module.css"
+import { SearchFilmInput } from "../SearchFilmInput/SearchFilmInput"
 
 export function SearchPanel() {
 	return (

@@ -13,9 +13,7 @@ export function FullWidthButton({
 }: FullWidthButtonProps) {
 	return (
 		<button
-			className={
-				disabled ? `${styles.disabled} ${styles.button}` : styles.button
-			}
+			className={`${styles.button} ${disabled ? styles.disabled : ""}`}
 			onClick={onClick}
 			disabled={disabled}>
 			{children}

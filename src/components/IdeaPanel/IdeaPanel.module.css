@@ -1,6 +1,5 @@
 .ideaPanel {
 	width: 90%;
-	/* margin: 120px auto 0; */
 	color: var(--color-white);
 	display: flex;
 	flex-direction: column;

@@ -40,7 +40,6 @@ export const FiltersProvider: React.FC<{ children: ReactNode }> = ({
 	)
 }
 
-// Hook do używania kontekstu
 export const useFilters = () => {
 	const context = useContext(FiltersContext)
 	if (context === undefined) {
@@ -48,11 +47,3 @@ export const useFilters = () => {
 	}
 	return context
 }
-
-// export const useFilters = () => {
-// 	const context = useContext(FiltersContext)
-// 	if (context === undefined) {
-// 		throw new Error("useFilters must be used within a FiltersProvider")
-// 	}
-// 	return context
-// }

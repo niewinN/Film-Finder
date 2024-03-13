@@ -1,6 +1,6 @@
 .error {
 	margin-top: 6rem;
 	font-size: 1.2rem;
-	color: red;
+	color: var(--color-error);
 	text-align: center;
 }

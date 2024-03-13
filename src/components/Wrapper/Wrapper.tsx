@@ -1,5 +1,9 @@
 import styles from "./Wrapper.module.css"
 
-export function Wrapper({ children }) {
+interface WrapperProps {
+	children: React.ReactNode
+}
+
+export function Wrapper({ children }: WrapperProps) {
 	return <div className={styles.wrapper}>{children}</div>
 }

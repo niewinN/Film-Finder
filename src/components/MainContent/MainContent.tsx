@@ -1,5 +1,9 @@
 import styles from "./MainContent.module.css"
 
-export function MainContent({ children }) {
+interface MainContentProps {
+	children: React.ReactNode
+}
+
+export function MainContent({ children }: MainContentProps) {
 	return <div className={styles.mainContent}>{children}</div>
 }

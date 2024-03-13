@@ -14,7 +14,6 @@ export function SearchFilmInput() {
 				value={query}
 				onChange={e => setQuery(e.target.value)}
 			/>
-			{/* {isSearching && <div>Searching...</div>} */}
 			{errorMessage && (
 				<Error style={{ marginTop: "2rem" }}>{errorMessage}</Error>
 			)}

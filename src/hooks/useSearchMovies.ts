@@ -55,11 +55,9 @@ const useSearchMovies = (initialQuery: string = "", delay: number = 500) => {
 			}
 		}
 
-		// Jeśli zapytanie nie jest puste, wywołaj fetchMovies
 		if (debouncedQuery.trim()) {
 			fetchMovies()
 		} else {
-			// W przeciwnym razie, jeśli zapytanie jest puste, pobierz domyślne wyniki
 			const fetchDefaultMovies = async () => {
 				setIsSearching(true)
 				const api_key = import.meta.env.VITE_API_KEY

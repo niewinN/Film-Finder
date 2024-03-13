@@ -1,21 +1,11 @@
 import styles from "./MovieDetails.module.css"
-import React, { useState } from "react"
 import { MovieInformation } from "../MovieInformation/MovieInformation"
 import { Wrapper } from "../Wrapper/Wrapper"
 import { Modal } from "../Modal/Modal"
+import { useModal } from "../../hooks/useModal"
 
 const MovieDetails: React.FC = () => {
-	const [isModalVisible, setIsModalVisible] = useState(false)
-	const [modalContent, setModalContent] = useState({ title: "", text: "" })
-
-	const showModal = (title: string, text: string) => {
-		setModalContent({ title, text })
-		setIsModalVisible(true)
-	}
-
-	const hideModal = () => {
-		setIsModalVisible(false)
-	}
+	const { isModalVisible, showModal, hideModal, modalContent } = useModal()
 	return (
 		<Wrapper>
 			<div className={styles.movieDetails}>

@@ -1,55 +1,45 @@
 .list {
 	display: flex;
-	overflow-x: hidden; /* ukrywa pasek przewijania, ale pozwala na przewijanie */
+	overflow-x: hidden;
 	gap: 10px;
 	padding: 20px 0;
-
 	cursor: grab;
-
-	/* @media (min-width: 768px) {
-		margin: 0 20px;
-	} */
 }
 
 .listTitle {
-	/* text-align: center; */
 	margin-left: 50px;
 	font-size: 2rem;
 	color: var(--color-white);
 }
 
-/* Przewijanie przy najechaniu kursorem */
 .list:hover {
-	overflow-x: scroll; /* umożliwia przewijanie po najechaniu */
+	overflow-x: scroll;
 }
 
-/* Usunięcie widoczności paska przewijania nawet podczas przewijania */
 .list::-webkit-scrollbar {
-	display: none; /* dla przeglądarek opartych na WebKit jak Chrome, Safari */
+	display: none;
 }
 
-/* Opcjonalnie, dla przeglądarek obsługujących */
 .list {
-	-ms-overflow-style: none; /* dla Internet Explorer, Edge */
-	scrollbar-width: none; /* dla Firefox */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 .list:active {
-	cursor: grabbing; /* kursor w formie "zaciśniętej dłoni" podczas przeciągania */
+	cursor: grabbing;
 }
 
 .container {
 	display: flex;
-	align-items: center; /* Wyrównaj przyciski do środka względem listy */
+	align-items: center;
 	margin: 1rem 0 3rem 0;
 }
 
 .scrollButton {
 	background: none;
 	border: none;
-	color: white; /* lub inny kolor pasujący do designu */
-	font-size: 24px; /* lub inny rozmiar odpowiedni dla designu */
+	color: var(--color-white);
+	font-size: 24px;
 	cursor: pointer;
-	user-select: none; /* zabrania zaznaczania tekstu przycisku */
-	/* Dodaj padding, margin, itd. wg potrzeb */
+	user-select: none;
 }

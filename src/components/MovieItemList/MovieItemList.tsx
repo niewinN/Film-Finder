@@ -1,5 +1,5 @@
-import { MovieItem } from "../MovieItem/MovieItem"
 import styles from "./MovieItemList.module.css"
+import { MovieItem } from "../MovieItem/MovieItem"
 
 interface Movie {
 	id: number

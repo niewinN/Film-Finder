@@ -3,6 +3,8 @@ body {
 	--font-family-default: Helvetica, Arial, sans-serif;
 	--color-white: #ffffff;
 	--color-text-default: #222;
-	--color-background: #545151;
-	--color-title: rgb(214, 214, 121);
+	/* --color-title: rgb(214, 214, 121); */
+	--color-error: #eb0c0c;
+	--color-shadow: #646464;
+	--color-black: #000;
 }

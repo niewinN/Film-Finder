@@ -1,5 +1,4 @@
 import styles from "./Modal.module.css"
-import React from "react"
 import ReactDOM from "react-dom"
 import { FullWidthButton } from "../FullWidthButton/FullWidthButton"
 import modalImg from "../../assets/modal.png"

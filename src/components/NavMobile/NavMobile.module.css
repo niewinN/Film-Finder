@@ -1,17 +1,17 @@
 .navMobile {
 	display: flex;
 	align-items: center;
-	justify-content: space-between; /* Rozstawia elementy na przeciwnych końcach */
+	justify-content: space-between;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 60px;
-	padding: 0 20px; /* Dodaje trochę przestrzeni po bokach */
+	padding: 0 20px;
 	z-index: 999;
-	background-color: rgba(0, 0, 0); /* Można dostosować kolor tła */
+	background-color: var(--color-black);
 }
 
 .topBar {
-	background-color: rgba(0, 0, 0); /* Dostosuj, jeśli chcesz inny kolor tła */
+	background-color: var(--color-black);
 }
