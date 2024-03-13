@@ -1,6 +1,6 @@
 # <span style="color:#2e6da4;">Film Finder - Responsive web application for movie search</span>
-## Użyte Technologie
 
+## Technologies used
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
 ![CSS Modules](https://img.shields.io/badge/-CSS%20Modules-000000?style=flat&logo=css3&logoColor=white)
