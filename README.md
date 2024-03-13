@@ -10,11 +10,10 @@
 ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat&logo=vite&logoColor=white) 
 
 
-
-
-
-
 ![film11](https://github.com/niewinN/Film-Finder/assets/109554022/a4cc2f70-b6b1-4fc5-9dbe-4c6018b56296)
+-----------------------------------------------------------------------------------------------------------
 ![finder1](https://github.com/niewinN/Film-Finder/assets/109554022/2cf6e42e-eae0-4d28-a743-7b549286fdbd)
+-----------------------------------------------------------------------------------------------------------
 ![finder3](https://github.com/niewinN/Film-Finder/assets/109554022/02ee978e-2ed7-4a85-8ecd-460be955c5db)
+-----------------------------------------------------------------------------------------------------------
 ![finder4](https://github.com/niewinN/Film-Finder/assets/109554022/7ff97717-edc4-4af1-96b1-77896ca22931)
