@@ -5,8 +5,9 @@
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
 ![CSS Modules](https://img.shields.io/badge/-CSS%20Modules-000000?style=flat&logo=css3&logoColor=white)
 ![API](https://img.shields.io/badge/-REST%20API-009688?style=flat&logo=rest&logoColor=white)
-![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![Clean Code](https://img.shields.io/badge/Clean%20Code-00599C?style=flat)
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
 ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat&logo=vite&logoColor=white) 
 
 
@@ -17,3 +18,8 @@
 ![finder3](https://github.com/niewinN/Film-Finder/assets/109554022/02ee978e-2ed7-4a85-8ecd-460be955c5db)
 -----------------------------------------------------------------------------------------------------------
 ![finder4](https://github.com/niewinN/Film-Finder/assets/109554022/7ff97717-edc4-4af1-96b1-77896ca22931)
+-----------------------------------------------------------------------------------------------------------
+![finder5](https://github.com/niewinN/Film-Finder/assets/109554022/03d2f6da-189e-47b7-9ab6-1dd209734560)
+-----------------------------------------------------------------------------------------------------------
+![finder6](https://github.com/niewinN/Film-Finder/assets/109554022/a88ceb9f-12cd-49d9-b412-19d1f054cc96)
+-----------------------------------------------------------------------------------------------------------
