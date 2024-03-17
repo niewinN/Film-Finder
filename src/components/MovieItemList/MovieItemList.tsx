@@ -17,6 +17,7 @@ const MovieItemList = ({ movies }: MovieItemListProps) => {
 		<div className={styles.movieItemList}>
 			{movies.map(movie => (
 				<MovieItem
+					key={movie.id}
 					id={movie.id}
 					title={movie.title}
 					releaseDate={movie.release_date}

@@ -28,7 +28,7 @@ export function WatchlistPage() {
 			<Wrapper>
 				{watchlist.length > 0 ? (
 					watchlist.map((movie: Movie) => (
-						<div className='movieDetailsPage'>
+						<div key={movie.id} className='movieDetailsPage'>
 							<MovieInformation
 								key={movie.id}
 								movie={movie}
